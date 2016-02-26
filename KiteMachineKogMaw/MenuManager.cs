@@ -109,6 +109,7 @@ namespace KiteMachineKogMaw
             SettingMenu.AddLabel("Gap Closer");
             SettingMenu.Add("Ugapc", new CheckBox("Use Gapcloser"));
             SettingMenu.Add("Egapc", new CheckBox("Use E to gapclose"));
+            SettingMenu.Add("dontw", new KeyBind("Don't move in combo", false, KeyBind.BindTypes.PressToggle, 'A'));
             SettingMenu.AddSeparator(1);
 
             //Item Menu
@@ -179,5 +180,6 @@ namespace KiteMachineKogMaw
 
         public static bool BC { get { return SettingMenu["BC"].Cast<CheckBox>().CurrentValue; } }
         public static bool BOTRK { get { return SettingMenu["BOTRK"].Cast<CheckBox>().CurrentValue; } }
+        public static bool dontw { get { return SettingMenu["dontw"].Cast<KeyBind>().CurrentValue; } }
     }
 }
