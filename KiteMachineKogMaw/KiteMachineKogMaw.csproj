@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemManager.cs" />
     <Compile Include="LevelerManager.cs" />
     <Compile Include="MenuManager.cs" />
     <Compile Include="ModeManager.cs" />

@@ -76,10 +76,6 @@ namespace KiteMachineKogMaw
         public static float RMultiplier(Obj_AI_Base target)
         {
             float multiplier = 1;
-            if (target.HealthPercent <= target.MaxHealth * 0.25f)
-                multiplier = 3;
-            else if (target.HealthPercent <= target.MaxHealth * 0.5f)
-                multiplier = 2;
 
             return multiplier;
         }

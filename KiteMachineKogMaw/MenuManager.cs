@@ -6,7 +6,7 @@ namespace KiteMachineKogMaw
     internal class MenuManager
     {
         // Create Main Segments
-        public static Menu KiteMachineKogMawMenu, ComboMenu, HarassMenu, JungleMenu, LaneClearMenu, LastHitMenu, KillStealMenu, DrawingMenu, SettingMenu;
+        public static Menu KiteMachineKogMawMenu, ComboMenu, HarassMenu, JungleMenu, LaneClearMenu, LastHitMenu, KillStealMenu, DrawingMenu, SettingMenu, ItemMenu;
 
         public static void Initialize()
         {
@@ -22,7 +22,9 @@ namespace KiteMachineKogMaw
             ComboMenu.Add("Wcombo", new CheckBox("Use W"));
             ComboMenu.Add("Ecombo", new CheckBox("Use E"));
             ComboMenu.Add("Rcombo", new CheckBox("Use R"));
-            ComboMenu.Add("Scombo", new Slider("Max R Stacks", 2, 1, 10));
+            ComboMenu.Add("Scombo", new Slider("Max R Stacks", 1, 1, 10));
+            ComboMenu.AddSeparator(1);
+            ComboMenu.Add("Mcombo", new Slider("Mana Limiter at mana %", 25));
 
             // Harass Menu
             HarassMenu = KiteMachineKogMawMenu.AddSubMenu("Harass Features", "HarassFeatures");
@@ -107,7 +109,20 @@ namespace KiteMachineKogMaw
             SettingMenu.AddLabel("Gap Closer");
             SettingMenu.Add("Ugapc", new CheckBox("Use Gapcloser"));
             SettingMenu.Add("Egapc", new CheckBox("Use E to gapclose"));
+            SettingMenu.AddSeparator(1);
+
+            //Item Menu
+            KiteMachineKogMawMenu.AddSubMenu("Items", "Items");
+            ItemMenu.AddGroupLabel("Items");
+            ItemMenu.Add("cutlass", new CheckBox("Use Bilgewater Cutlass"));
+            ItemMenu.Add("botrk", new CheckBox("Use Blade of the Ruined King"));
+           
+
+
+
+
         }
+
 
         // Assign Global Checks+
         public static bool ComboUseQ { get { return ComboMenu["Qcombo"].Cast<CheckBox>().CurrentValue; } }
@@ -115,6 +130,7 @@ namespace KiteMachineKogMaw
         public static bool ComboUseE { get { return ComboMenu["Ecombo"].Cast<CheckBox>().CurrentValue; } }
         public static bool ComboUseR { get { return ComboMenu["Rcombo"].Cast<CheckBox>().CurrentValue; } }
         public static int ComboStacks { get { return ComboMenu["Scombo"].Cast<Slider>().CurrentValue; } }
+        public static int ComboMana { get { return ComboMenu["Mcombo"].Cast<Slider>().CurrentValue; } }
 
         public static bool HarassUseQ { get { return HarassMenu["Qharass"].Cast<CheckBox>().CurrentValue; } }
         public static bool HarassUseW { get { return HarassMenu["Wharass"].Cast<CheckBox>().CurrentValue; } }
@@ -160,5 +176,8 @@ namespace KiteMachineKogMaw
 
         public static bool GapCloserMode { get { return SettingMenu["Ugapc"].Cast<CheckBox>().CurrentValue; } }
         public static bool GapCloserUseE { get { return SettingMenu["Egapc"].Cast<CheckBox>().CurrentValue; } }
+
+        public static bool BC { get { return SettingMenu["BC"].Cast<CheckBox>().CurrentValue; } }
+        public static bool BOTRK { get { return SettingMenu["BOTRK"].Cast<CheckBox>().CurrentValue; } }
     }
 }
