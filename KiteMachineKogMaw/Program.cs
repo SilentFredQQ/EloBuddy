@@ -15,7 +15,6 @@ namespace KiteMachineKogMaw
 
         // Global Passive Target
         public static Obj_AI_Base Ptarget;
-        private static readonly bool dontw;
 
         public static void Main()
         {

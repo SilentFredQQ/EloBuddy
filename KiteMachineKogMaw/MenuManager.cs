@@ -112,10 +112,7 @@ namespace KiteMachineKogMaw
             SettingMenu.AddSeparator(1);
 
             //Item Menu
-            KiteMachineKogMawMenu.AddSubMenu("Items", "Items");
-            ItemMenu.AddGroupLabel("Items");
-            ItemMenu.Add("cutlass", new CheckBox("Use Bilgewater Cutlass"));
-            ItemMenu.Add("botrk", new CheckBox("Use Blade of the Ruined King"));
+
            
 
 
