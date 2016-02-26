@@ -164,23 +164,6 @@ namespace KiteMachineKogMaw
             if (MenuManager.StackerMode)
                 ModeManager.StackMode();
         }
-
-        private static void OnDraw(EventArgs args)
-        {
-            if (dontw && Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) && Orbwalker.DisableMovement == false)
-            {
-                Orbwalker.DisableMovement = true;
-                Player.IssueOrder(GameObjectOrder.Stop, Champion);
-            }
-
-            if (!dontw || !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
-            {
-                Orbwalker.DisableMovement = false;
-            }
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo) && dontw)
-            {
-                Drawing.DrawText(Drawing.Width * 0.5f, Drawing.Height * 0.3f, System.Drawing.Color.Orange, "Not moving when W is active is on.", 50);
-            }
-        }
     }
 }
+
